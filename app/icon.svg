@@ -1,0 +1,28 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="o" x1="30" y1="24" x2="98" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7CA7E6"/><stop offset="0.55" stop-color="#3E74E0"/><stop offset="1" stop-color="#1E54E6"/>
+    </linearGradient>
+    <linearGradient id="l" x1="44" y1="34" x2="86" y2="88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#57D8B0"/><stop offset="1" stop-color="#149C82"/>
+    </linearGradient>
+    <linearGradient id="r" x1="18" y1="40" x2="112" y2="104" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FBC42B"/><stop offset="0.5" stop-color="#F79A22"/><stop offset="1" stop-color="#F2731C"/>
+    </linearGradient>
+    <clipPath id="g"><circle cx="62" cy="56" r="38"/></clipPath>
+  </defs>
+  <g transform="rotate(-22 64 60)"><path d="M8 60 A56 20 0 0 1 120 60" fill="none" stroke="url(#r)" stroke-width="8.5" stroke-linecap="round" opacity="0.55"/></g>
+  <path d="M45 86 L64 86 L47 106 Z" fill="#1E54E6"/>
+  <circle cx="62" cy="56" r="38" fill="url(#o)"/>
+  <g clip-path="url(#g)">
+    <path d="M50 30 C44 37 45 47 49 54 C46 61 49 71 55 78 C58 73 56 66 54 61 C60 55 57 44 55 38 C54 34 53 31 50 30 Z" fill="url(#l)"/>
+    <path d="M66 33 C75 31 86 36 83 46 C88 51 83 61 76 62 C74 71 69 79 64 76 C67 68 62 62 65 55 C60 48 61 39 66 33 Z" fill="url(#l)"/>
+    <path d="M40 66 C44 64 48 67 47 71 C44 74 39 72 40 66 Z" fill="url(#l)"/>
+    <g fill="none" stroke="#fff" stroke-width="1.1">
+      <ellipse cx="62" cy="56" rx="14" ry="38" opacity="0.22"/>
+      <ellipse cx="62" cy="56" rx="28" ry="38" opacity="0.15"/>
+      <ellipse cx="62" cy="56" rx="38" ry="14" opacity="0.18"/>
+    </g>
+  </g>
+  <g transform="rotate(-22 64 60)"><path d="M120 60 A56 20 0 0 1 8 60" fill="none" stroke="url(#r)" stroke-width="9" stroke-linecap="round"/></g>
+</svg>
