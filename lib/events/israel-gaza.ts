@@ -1,0 +1,102 @@
+import { Event } from "@/lib/types";
+
+export const israelGaza: Event = {
+  slug: "israel-gaza",
+  title: "Israel & Gaza",
+  aliases: ["israel", "gaza", "palestine", "hamas", "middle east", "conflict"],
+  category: "War & Conflict",
+  date: "2023–2024",
+  standfirst: "Even naming what happened is contested. Watch the verbs.",
+  summary: "“Strikes,” “retaliation,” “massacre” — the verbs carry the argument.",
+  sources: [
+    {
+      outlet: "The Times of Israel",
+      country: "Israel",
+      flag: "🇮🇱",
+      orientation: "Private / commercial",
+      accent: "#c0392b",
+      headline: "Israel strikes Gaza in retaliation after deadly Hamas terror attack",
+      contestedWords: ["retaliation", "terror attack"],
+      framingWord: "retaliation",
+      tone: "Defensive",
+      focus: "Response to an initiating attack",
+    },
+    {
+      outlet: "Al Jazeera",
+      country: "Qatar",
+      flag: "🇶🇦",
+      orientation: "Pan-Arab",
+      accent: "#2471a3",
+      headline: "Israeli bombardment kills hundreds in Gaza as siege tightens",
+      contestedWords: ["bombardment", "siege"],
+      framingWord: "bombardment",
+      tone: "Accusatory",
+      focus: "Scale of civilian casualties and blockade",
+    },
+    {
+      outlet: "BBC",
+      country: "United Kingdom",
+      flag: "🇬🇧",
+      orientation: "Public broadcaster",
+      accent: "#7d3c98",
+      headline: "Israel and Hamas at war as violence escalates across Gaza",
+      contestedWords: ["at war", "violence escalates"],
+      framingWord: "war",
+      tone: "Measured",
+      focus: "Two named parties; careful attribution",
+    },
+    {
+      outlet: "Associated Press",
+      country: "United States",
+      flag: "🇺🇸",
+      orientation: "Centrist",
+      accent: "#b9770e",
+      headline: "Conflict between Israel and Hamas deepens humanitarian crisis in Gaza",
+      contestedWords: ["Conflict", "humanitarian crisis"],
+      framingWord: "conflict",
+      tone: "Neutral",
+      focus: "Humanitarian consequences, minimal blame",
+    },
+  ],
+  contestedTerms: [
+    {
+      term: "retaliation",
+      accent: "#c0392b",
+      why: "“Retaliation” presupposes an initiating act, placing responsibility on the other side and framing the response as justified.",
+    },
+    {
+      term: "bombardment",
+      accent: "#2471a3",
+      why: "A one-directional word centres the force applied and its victims, foregrounding scale and civilian harm.",
+    },
+    {
+      term: "war",
+      accent: "#7d3c98",
+      why: "Naming two combatants and attributing claims to each is a hallmark of outlets prioritising balance over a verdict.",
+    },
+    {
+      term: "conflict",
+      accent: "#b9770e",
+      why: "The most neutral noun avoids assigning a starting point or a wrongdoer, keeping the focus on consequences.",
+    },
+  ],
+  historicalContext:
+    "The Israeli–Palestinian conflict spans over a century of disputes over land, statehood and security. Terminology here is deeply contested; word choice is itself part of the political argument.",
+  backgroundFacts: [
+    "Gaza is a densely populated territory governed by Hamas.",
+    "The UN and aid agencies repeatedly warned of a humanitarian emergency.",
+    "Casualty figures were reported by multiple parties and international bodies.",
+  ],
+  timeline: [
+    { date: "7 Oct 2023", label: "Hamas-led attack on southern Israel" },
+    { date: "Oct 2023", label: "Israel launches large-scale operation in Gaza" },
+    { date: "2024", label: "Humanitarian crisis and ceasefire negotiations" },
+  ],
+  missingPerspectives:
+    "Headlines rarely centre civilians on both sides who want no part in the fighting, or the historical roots that each framing takes for granted.",
+  reflectionQuestions: [
+    "Notice the verbs: “strikes,” “bombardment,” “at war.” Which assigns blame, and which avoids it?",
+    "Can any single headline describe this event without taking a side?",
+    "What would you still need to know before forming your own view?",
+  ],
+};

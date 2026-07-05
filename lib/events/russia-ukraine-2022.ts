@@ -1,0 +1,102 @@
+import { Event } from "@/lib/types";
+
+export const russiaUkraine2022: Event = {
+  slug: "russia-ukraine-2022",
+  title: "Russia & Ukraine",
+  aliases: ["ukraine", "russia", "putin", "war", "invasion", "special military operation"],
+  category: "War & Conflict",
+  date: "February 2022",
+  standfirst: "The words the world used were not the same. Here is why.",
+  summary: "One act, four names — from “invasion” to “special operation.”",
+  sources: [
+    {
+      outlet: "BBC",
+      country: "United Kingdom",
+      flag: "🇬🇧",
+      orientation: "Public broadcaster",
+      accent: "#c0392b",
+      headline: "Russia invades Ukraine in biggest attack on a European state since WWII",
+      contestedWords: ["invades", "attack"],
+      framingWord: "invasion",
+      tone: "Alarmed",
+      focus: "Scale of aggression and threat to European order",
+    },
+    {
+      outlet: "TASS",
+      country: "Russia",
+      flag: "🇷🇺",
+      orientation: "State-owned",
+      accent: "#2471a3",
+      headline: "Putin announces special military operation to defend Donbass",
+      contestedWords: ["special military operation", "defend"],
+      framingWord: "special operation",
+      tone: "Justifying",
+      focus: "Defensive, limited action framed as protection",
+    },
+    {
+      outlet: "Xinhua",
+      country: "China",
+      flag: "🇨🇳",
+      orientation: "State-owned",
+      accent: "#7d3c98",
+      headline: "Russia launches military action amid Ukraine crisis; Beijing urges restraint",
+      contestedWords: ["military action", "crisis"],
+      framingWord: "crisis",
+      tone: "Detached",
+      focus: "Neutral nouns; emphasis on calls for calm",
+    },
+    {
+      outlet: "Al Jazeera",
+      country: "Qatar",
+      flag: "🇶🇦",
+      orientation: "Pan-Arab",
+      accent: "#b9770e",
+      headline: "Russian forces enter Ukraine as conflict escalates; civilians flee",
+      contestedWords: ["conflict", "civilians flee"],
+      framingWord: "conflict",
+      tone: "Humanitarian",
+      focus: "Impact on ordinary people on the ground",
+    },
+  ],
+  contestedTerms: [
+    {
+      term: "invasion",
+      accent: "#c0392b",
+      why: "“Invasion” names an aggressor and a victim. Western outlets invoke WWII memory to signal a violation of sovereignty and moral clarity.",
+    },
+    {
+      term: "special operation",
+      accent: "#2471a3",
+      why: "The Kremlin’s official term avoids the word “war” — legally and emotionally loaded — and reframes the act as limited and defensive.",
+    },
+    {
+      term: "crisis",
+      accent: "#7d3c98",
+      why: "Outlets balancing ties with both sides prefer a neutral noun that avoids naming a wrongdoer, preserving diplomatic room.",
+    },
+    {
+      term: "conflict",
+      accent: "#b9770e",
+      why: "A two-sided word that centres consequences — displacement and civilian harm — over the question of blame.",
+    },
+  ],
+  historicalContext:
+    "Russia and Ukraine share deep historical ties dating to Kievan Rus'. After the 2014 annexation of Crimea and war in the Donbass, language about the region was already politically charged long before February 2022.",
+  backgroundFacts: [
+    "On 24 February 2022, Russian armed forces crossed into Ukrainian territory.",
+    "The UN General Assembly voted 141–5 to demand Russia's withdrawal.",
+    "Millions of Ukrainians were displaced within the following weeks.",
+  ],
+  timeline: [
+    { date: "2014", label: "Russia annexes Crimea; war begins in Donbass" },
+    { date: "24 Feb 2022", label: "Russian forces cross into Ukraine" },
+    { date: "2 Mar 2022", label: "UN General Assembly demands withdrawal (141–5)" },
+  ],
+  missingPerspectives:
+    "Across all four headlines, the voices least heard are ordinary Russians and Ukrainians who disagree with their governments, and the long-term diplomatic history that shaped both sides' positions.",
+  reflectionQuestions: [
+    "Which single word changed how you felt the fastest?",
+    "If you only read one of these outlets for a year, what would you never learn?",
+    "Is a “neutral” word like “crisis” always the most honest one — or can it hide something?",
+  ],
+};

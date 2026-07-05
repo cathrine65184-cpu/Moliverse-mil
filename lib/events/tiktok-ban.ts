@@ -1,0 +1,102 @@
+import { Event } from "@/lib/types";
+
+export const tiktokBan: Event = {
+  slug: "tiktok-ban",
+  title: "The TikTok Ban",
+  aliases: ["tiktok", "bytedance", "ban", "app", "china", "us", "data"],
+  category: "Technology & Power",
+  date: "2024–2025",
+  standfirst: "National security, free speech, or a trade war? Depends who's writing.",
+  summary: "Is banning TikTok about safety, censorship, or rivalry with China?",
+  sources: [
+    {
+      outlet: "The New York Times",
+      country: "United States",
+      flag: "🇺🇸",
+      orientation: "Centrist",
+      accent: "#c0392b",
+      headline: "US moves to ban TikTok over national security fears about Chinese control",
+      contestedWords: ["national security", "Chinese control"],
+      framingWord: "security threat",
+      tone: "Concerned",
+      focus: "Data risk and foreign ownership",
+    },
+    {
+      outlet: "Global Times",
+      country: "China",
+      flag: "🇨🇳",
+      orientation: "State-owned",
+      accent: "#2471a3",
+      headline: "US TikTok crackdown exposes hypocrisy on free market and free speech",
+      contestedWords: ["crackdown", "hypocrisy"],
+      framingWord: "suppression",
+      tone: "Accusatory",
+      focus: "US double standard and protectionism",
+    },
+    {
+      outlet: "The Guardian",
+      country: "United Kingdom",
+      flag: "🇬🇧",
+      orientation: "Left-leaning",
+      accent: "#7d3c98",
+      headline: "TikTok ban raises free-speech questions for millions of young users",
+      contestedWords: ["free-speech questions", "young users"],
+      framingWord: "free-speech issue",
+      tone: "Questioning",
+      focus: "Civil-liberties cost to ordinary users",
+    },
+    {
+      outlet: "The Straits Times",
+      country: "Singapore",
+      flag: "🇸🇬",
+      orientation: "Private / commercial",
+      accent: "#b9770e",
+      headline: "TikTok saga reflects deepening US–China tech rivalry, analysts say",
+      contestedWords: ["US–China tech rivalry"],
+      framingWord: "tech rivalry",
+      tone: "Analytical",
+      focus: "Geopolitical competition, not the app itself",
+    },
+  ],
+  contestedTerms: [
+    {
+      term: "security threat",
+      accent: "#c0392b",
+      why: "US outlets foreground data and foreign control, framing the app as a national-security problem to be neutralised.",
+    },
+    {
+      term: "suppression",
+      accent: "#2471a3",
+      why: "Chinese state media reframes the ban as censorship and protectionism, turning US values back on the US.",
+    },
+    {
+      term: "free-speech issue",
+      accent: "#7d3c98",
+      why: "A civil-liberties lens centres the users who lose a platform, downplaying the geopolitical framing.",
+    },
+    {
+      term: "tech rivalry",
+      accent: "#b9770e",
+      why: "Third-party outlets zoom out to great-power competition, treating the app as a symptom, not the story.",
+    },
+  ],
+  historicalContext:
+    "TikTok is owned by Beijing-based ByteDance. US–China friction over technology, data and supply chains had been escalating for years, making the app a flashpoint far larger than social media.",
+  backgroundFacts: [
+    "TikTok is owned by ByteDance, headquartered in Beijing.",
+    "US legislation required ByteDance to divest TikTok or face a ban.",
+    "TikTok reported over 170 million users in the United States.",
+  ],
+  timeline: [
+    { date: "2020", label: "First US attempts to force a TikTok sale" },
+    { date: "Apr 2024", label: "US passes divest-or-ban law" },
+    { date: "2025", label: "Legal challenges and deadline standoff" },
+  ],
+  missingPerspectives:
+    "Rarely centred: the creators and small businesses whose livelihoods depend on the platform, and independent security researchers on what the data actually shows.",
+  reflectionQuestions: [
+    "Which word — “security,” “suppression,” or “rivalry” — feels most true to you, and why?",
+    "Can a story be about free speech AND national security at the same time?",
+    "Whose interests does each outlet's home country have in this story?",
+  ],
+};
