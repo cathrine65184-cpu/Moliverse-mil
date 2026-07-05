@@ -1,44 +1,38 @@
 import { Fragment } from "react";
-
-interface HighlightProps {
-  text: string;
-  marks: string[];
-  accent?: string;
-}
-
-function escapeRegex(value: string) {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 export default function Highlight({
   text,
   marks,
   accent = "#c0392b",
-}: HighlightProps) {
-  const presentMarks = [...new Set(marks)]
-    .filter((mark) => mark && text.includes(mark))
-    .sort((a, b) => b.length - a.length);
+}: {
+  text: string;
+  marks: string[];
+  accent?: string;
+}) {
+  const valid = marks.filter((m) => m && text.includes(m));
+  if (valid.length === 0) return <>{text}</>;
 
-  if (presentMarks.length === 0) {
-    return <>{text}</>;
-  }
-
-  const pattern = new RegExp(`(${presentMarks.map(escapeRegex).join("|")})`, "g");
+  const pattern = new RegExp(`(${valid.map(escapeRegExp).join("|")})`, "g");
   const parts = text.split(pattern);
 
   return (
     <>
-      {parts.map((part, index) => {
-        if (presentMarks.includes(part)) {
-          return (
-            <mark key={`${part}-${index}`} style={{ backgroundColor: accent }}>
-              {part}
-            </mark>
-          );
-        }
-
-        return <Fragment key={`text-${index}`}>{part}</Fragment>;
-      })}
+      {parts.map((part, i) =>
+        valid.includes(part) ? (
+          <mark
+            key={i}
+            className="rounded-[2px] px-0.5"
+            style={{ backgroundColor: `${accent}22`, color: "inherit" }}
+          >
+            {part}
+          </mark>
+        ) : (
+          <Fragment key={i}>{part}</Fragment>
+        ),
+      )}
     </>
   );
 }

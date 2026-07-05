@@ -7,6 +7,12 @@ describe("curated events", () => {
     expect(events).toHaveLength(3);
   });
 
+  it("gives every event exactly 4 sources", () => {
+    for (const e of events) {
+      expect(e.sources, `event ${e.slug}`).toHaveLength(4);
+    }
+  });
+
   it("each event passes structural validation", () => {
     for (const e of events) {
       expect(validateEvent(e), `event ${e.slug}`).toEqual([]);
