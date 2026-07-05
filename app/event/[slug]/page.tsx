@@ -84,7 +84,7 @@ export default function EventPage({ params }: { params: { slug: string } }) {
         <BackgroundFacts facts={event.backgroundFacts} timeline={event.timeline} />
       </div>
 
-      <SectionLabel n="④">What's left out</SectionLabel>
+      <SectionLabel n="④">What&apos;s left out</SectionLabel>
       <p className="mt-2 prose-news border-l-2 border-rule pl-4 italic">
         {event.missingPerspectives}
       </p>

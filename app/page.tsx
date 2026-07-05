@@ -22,7 +22,7 @@ export default function HomePage() {
         <p className="mt-2 prose-news max-w-2xl">
           The ability to recognise, compare and understand how culture, history,
           politics, language and media systems shape the way information is presented.
-          We don't tell you who is right — we show you why the story changes with the
+          We don&apos;t tell you who is right — we show you why the story changes with the
           storyteller.
         </p>
       </section>

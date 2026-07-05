@@ -45,11 +45,18 @@ export default function ReflectionPrompts({
     <div className="space-y-5">
       {questions.map((question, index) => (
         <div key={index} className="border-l-[3px] border-ink pl-4">
-          <p className="font-serif text-base italic text-ink">{question}</p>
+          <label
+            htmlFor={`reflection-${slug}-${index}`}
+            className="block font-serif text-base italic text-ink"
+          >
+            {question}
+          </label>
           <textarea
+            id={`reflection-${slug}-${index}`}
             value={answers[index] ?? ""}
             onChange={(event) => update(index, event.target.value)}
             placeholder="Your answer…"
+            aria-label={question}
             rows={2}
             className="mt-2 w-full rounded-sm border border-rule bg-paper-card px-3 py-2 font-serif text-sm text-ink focus:border-accent focus:outline-none"
           />
