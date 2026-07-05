@@ -1,58 +1,66 @@
 # MoliVerse 🌍
 
-**Learn Languages Through Real-World Media** — an AI-powered educational platform that turns real news into personalized, CEFR-graded language lessons while building Media & Information Literacy (MIL).
+**Perspective Literacy for Real News** — a static, editorial-style site that shows how different outlets frame the same global event, so readers can see bias, provenance, and missing context before they form an opinion.
 
 Built for the **UNESCO Youth Hackathon 2026**.
 
-> Real media → lessons → compare → reflect → discuss.
+> Search an event → compare how outlets headline it → see *why* the framing differs → check provenance → predict before you reveal → reflect.
 
 ## Features
 
-1. **Media Lesson Generator** — a CEFR-graded content engine turns a topic + learner profile into a full lesson: learning-path progression, can-do objectives, level-tagged vocabulary, a grammar focus, a natural roleplay dialogue, interactive exercises (match / choose / fill / word-order / produce / speak), a media-literacy reflection, and a spaced-repetition review. Supports **7 languages** (English, French, Spanish, Chinese, Japanese, Korean, Arabic).
-2. **Real News** — live articles pulled from real publishers (BBC, The Guardian, NYT, France 24, China Daily, Channel NewsAsia, Al Jazeera) via server-side RSS. Compare coverage across regions, read the original, and generate a lesson from any story.
-3. **Global Media Comparison** — a media-literacy engine showing how the US, France, China and Southeast Asia frame the same event, tagged by framing type with an AI analysis.
-4. **Mentor Mode** — real university-mentor profiles lead discussion; AI only prepares the material.
+1. **Event dossiers** — each event is a curated, editorial "dossier" page comparing how 4 outlets across different countries and orientations (public broadcaster, state-owned, private/commercial, pan-Arab, etc.) headline the same story, with contested-word highlighting and a framing explainer for each.
+2. **Search gallery** — client-side search/filter across events by title, alias, and category on the landing page.
+3. **Provenance** — every source headline links to its original URL and an archived copy (`archiveUrl`), with a publish date, so claims are traceable and checkable rather than taken on faith.
+4. **Predict-before-reveal** — a headline-guessing challenge (`HeadlineGuess` / `PerspectiveChallenge`) that asks the reader to predict an outlet's framing before revealing it, turning bias-spotting into an active exercise instead of passive reading.
+5. **Background facts & timeline** — a sourced, outlet-independent timeline and background-fact list per event, plus a "missing perspectives" note naming viewpoints the dossier doesn't cover.
+6. **Reflection prompts** — end-of-dossier questions that persist answers to `localStorage`.
 
-## Content engine
+## Content model
 
-The lesson content is produced by a deterministic-but-varied engine in [`lib/engine/`](lib/engine):
+All content is curated, typed TypeScript data — no backend, no LLM calls, no network requests at runtime. See [`lib/types.ts`](lib/types.ts) for the full shape (`Event`, `Source`, `ContestedTerm`, `BackgroundFact`, `TimelineEntry`).
 
-- **`lexicon.ts`** — CEFR-tagged (A1–B2), themed vocabulary with parts of speech and example sentences; level-aware, theme-aware selection.
-- **`dialogue.ts`** — multiple dialogue scenarios with randomized phrasings, so lessons don't feel templated.
-- **`exercises.ts`** — Duolingo/Memrise-style exercise generators, scaled by CEFR level.
-- **`rng.ts`** — a seeded PRNG; each generation reseeds (`variant`) so repeated lessons stay fresh.
-- **`index.ts`** — assembles the lesson: objectives, grammar, progression path, spaced review.
+- **`lib/events/`** — one file per event (currently `israel-gaza.ts`, `russia-ukraine-2022.ts`, `tiktok-ban.ts`), aggregated via `index.ts`. Each event ships exactly 4 sources; every `contestedWords` entry is validated (`validate.ts`) to be an exact substring of its source headline.
+- **`lib/search.ts`** — client-side search/filter logic for the event gallery.
+- **`lib/challenge.ts`** — scoring/logic for the predict-before-reveal headline-guessing challenge.
 
 ## Tech stack
 
 - **Next.js 14** (App Router) + **React 18** + **TypeScript**
-- **Tailwind CSS 3**
-- **rss-parser** for real news (server route `app/api/news`)
-- No paid API keys required.
+- **Tailwind CSS 3** — Editorial Newsprint visual identity (paper `#f5f1e8`, ink `#1a1a1a`, red accent `#c0392b`, verified-green `#1a7a4a`); serif for headings/body, Inter for small labels/chips
+- **Vitest** + **Testing Library** for unit tests
+- No paid API keys, no external network calls at runtime
 
 ## Run it
 
 ```bash
 npm install
 npm run dev     # → http://localhost:3000
+npm test        # run the vitest suite
 ```
 
 ## Project structure
 
 ```
 app/
-  page.tsx              # Home
-  lesson/               # Lesson generator (content engine UI)
-  news/                 # Real news (RSS)
-  compare/              # Media comparison
-  mentor/               # Mentor mode
-  api/news/route.ts     # Server-side RSS fetcher
-components/             # Navbar, Footer, Logo, ExerciseSet, MentorCard, …
+  page.tsx              # Home / search gallery
+  event/[slug]/page.tsx # Event dossier page
+  layout.tsx, globals.css, icon.svg
+components/
+  SearchGallery.tsx      # Landing-page search/filter
+  SourceHeadline.tsx      # Per-outlet headline card
+  ContestedWordStrip.tsx  # Highlights contested terms across sources
+  FramingExplainer.tsx    # Explains why framing differs
+  HeadlineGuess.tsx,
+  PerspectiveChallenge.tsx # Predict-before-reveal challenge
+  BackgroundFacts.tsx, FactTimeline.tsx
+  SourcesAndMethod.tsx    # Provenance: source links, archive links, methodology
+  ReflectionPrompts.tsx   # Persists reflection answers to localStorage
+  Masthead.tsx, Footer.tsx, Logo.tsx, Highlight.tsx
 lib/
-  engine/               # CEFR content engine
-  mockAI.ts             # Comparison + mentor-plan generators
-  newsApi.ts            # Client helper for /api/news
-  profiles.ts           # Mentor & learner profiles
+  types.ts               # Event / Source / ContestedTerm / TimelineEntry types
+  events/                 # Curated per-event dossier data + validate.ts
+  search.ts               # Event search/filter
+  challenge.ts             # Headline-guessing challenge logic
 ```
 
 Built with [Claude Code](https://claude.com/claude-code).
