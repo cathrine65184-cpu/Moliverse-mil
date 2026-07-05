@@ -1,29 +1,18 @@
 import Link from "next/link";
-import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-100 bg-floral">
-      <div className="container-page flex flex-col items-center justify-between gap-4 py-8 sm:flex-row">
-        <div className="flex items-center gap-3">
-          <Logo withTagline />
-          <span className="hidden text-sm text-ink-soft sm:inline">
-            · Media-driven language learning
-          </span>
+    <footer className="mt-16 border-t-2 border-ink bg-paper">
+      <div className="container-page flex flex-col items-start justify-between gap-3 py-8 sm:flex-row sm:items-center">
+        <div className="font-serif text-sm text-ink-soft">
+          <span className="font-bold text-ink">MoliVerse</span> · Perspective
+          Literacy for the AI generation
         </div>
-        <div className="flex items-center gap-5 text-sm text-ink-soft">
-          <Link href="/lesson" className="hover:text-brand">
-            Lessons
+        <div className="flex items-center gap-5 font-sans text-xs text-ink-muted">
+          <Link href="/" className="hover:text-accent">
+            All events
           </Link>
-          <Link href="/compare" className="hover:text-brand">
-            Compare
-          </Link>
-          <Link href="/mentor" className="hover:text-brand">
-            Mentor
-          </Link>
-          <span className="hidden text-ink-soft sm:inline">
-            UNESCO Youth Hackathon 2026
-          </span>
+          <span>UNESCO MIL Hackathon 2026</span>
         </div>
       </div>
     </footer>
