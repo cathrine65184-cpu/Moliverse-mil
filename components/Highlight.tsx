@@ -12,16 +12,19 @@ export default function Highlight({
   marks: string[];
   accent?: string;
 }) {
-  const valid = marks.filter((m) => m && text.includes(m));
+  const valid = [...new Set(marks.filter((m) => m && text.includes(m)))].sort(
+    (a, b) => b.length - a.length,
+  );
   if (valid.length === 0) return <>{text}</>;
 
+  const validSet = new Set(valid);
   const pattern = new RegExp(`(${valid.map(escapeRegExp).join("|")})`, "g");
   const parts = text.split(pattern);
 
   return (
     <>
       {parts.map((part, i) =>
-        valid.includes(part) ? (
+        validSet.has(part) ? (
           <mark
             key={i}
             className="rounded-[2px] px-0.5"

@@ -23,4 +23,31 @@ describe("Highlight", () => {
     );
     expect(container.textContent).toBe("a conflict escalates");
   });
+
+  it("treats regex special characters as literal text", () => {
+    render(
+      <Highlight
+        text="Coverage asked whether C++ could outlast A/B testing in 2026?"
+        marks={["C++", "A/B testing"]}
+        accent="#123456"
+      />,
+    );
+
+    const cplusplus = screen.getByText("C++");
+    const abTesting = screen.getByText("A/B testing");
+
+    expect(cplusplus.tagName).toBe("MARK");
+    expect(abTesting.tagName).toBe("MARK");
+    expect((cplusplus as HTMLElement).style.backgroundColor).toBe(
+      "rgba(18, 52, 86, 0.133)",
+    );
+  });
+
+  it("prefers longer overlapping marks", () => {
+    render(
+      <Highlight text="Russia calls it an invasion" marks={["in", "invasion"]} />,
+    );
+
+    expect(screen.getByText("invasion").tagName).toBe("MARK");
+  });
 });
