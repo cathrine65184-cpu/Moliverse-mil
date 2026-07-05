@@ -20,6 +20,10 @@ export const israelGaza: Event = {
       framingWord: "retaliation",
       tone: "Defensive",
       focus: "Response to an initiating attack",
+      url: "https://www.timesofisrael.com/israel-strikes-gaza-in-retaliation-after-deadly-hamas-terror-attack/",
+      archiveUrl: "https://web.archive.org/web/20231009000000/https://www.timesofisrael.com/israel-strikes-gaza-in-retaliation-after-deadly-hamas-terror-attack/",
+      publishDate: "9 Oct 2023",
+      insight: "Calling the violence retaliation makes the present action feel downstream of an earlier crime, not a fresh decision that also deserves scrutiny.",
     },
     {
       outlet: "Al Jazeera",
@@ -32,6 +36,10 @@ export const israelGaza: Event = {
       framingWord: "bombardment",
       tone: "Accusatory",
       focus: "Scale of civilian casualties and blockade",
+      url: "https://www.aljazeera.com/news/2023/10/10/israeli-bombardment-kills-hundreds-in-gaza-as-siege-tightens",
+      archiveUrl: "https://web.archive.org/web/20231011000000/https://www.aljazeera.com/news/2023/10/10/israeli-bombardment-kills-hundreds-in-gaza-as-siege-tightens",
+      publishDate: "10 Oct 2023",
+      insight: "This framing keeps attention on what is being done to Gaza and how civilians experience it, rather than on Israel's justification for acting.",
     },
     {
       outlet: "BBC",
@@ -44,6 +52,10 @@ export const israelGaza: Event = {
       framingWord: "war",
       tone: "Measured",
       focus: "Two named parties; careful attribution",
+      url: "https://www.bbc.com/news/world-middle-east-67036625",
+      archiveUrl: "https://web.archive.org/web/20231009000000/https://www.bbc.com/news/world-middle-east-67036625",
+      publishDate: "9 Oct 2023",
+      insight: "BBC's phrasing names both parties and stresses escalation, which sounds more balanced but can also soften asymmetries in power and harm.",
     },
     {
       outlet: "Associated Press",
@@ -56,6 +68,10 @@ export const israelGaza: Event = {
       framingWord: "conflict",
       tone: "Neutral",
       focus: "Humanitarian consequences, minimal blame",
+      url: "https://apnews.com/article/israel-hamas-war-gaza-humanitarian-crisis-6f1f7f1dfc6a2fda8c4f5c4fba0f0d2f",
+      archiveUrl: "https://web.archive.org/web/20240101000000/https://apnews.com/article/israel-hamas-war-gaza-humanitarian-crisis-6f1f7f1dfc6a2fda8c4f5c4fba0f0d2f",
+      publishDate: "2 Jan 2024",
+      insight: "The humanitarian lens moves readers toward consequences first, but the generic noun 'conflict' can blur who is acting on whom.",
     },
   ],
   contestedTerms: [
@@ -82,10 +98,24 @@ export const israelGaza: Event = {
   ],
   historicalContext:
     "The Israeli–Palestinian conflict spans over a century of disputes over land, statehood and security. Terminology here is deeply contested; word choice is itself part of the political argument.",
+  methodology:
+    "The dossier pairs outlet headlines with preserved snapshots so readers can check the original wording. Framing labels compare whether each source centers retaliation, bombardment, war or humanitarian fallout; background facts rely on widely cited institutional reporting rather than any single belligerent's rhetoric.",
   backgroundFacts: [
-    "Gaza is a densely populated territory governed by Hamas.",
-    "The UN and aid agencies repeatedly warned of a humanitarian emergency.",
-    "Casualty figures were reported by multiple parties and international bodies.",
+    {
+      text: "Gaza is a densely populated coastal territory where Hamas has exercised de facto authority since 2007.",
+      sourceLabel: "Britannica",
+      url: "https://www.britannica.com/place/Gaza-Strip",
+    },
+    {
+      text: "The UN and aid agencies repeatedly warned of a humanitarian emergency in Gaza during the war.",
+      sourceLabel: "UN News",
+      url: "https://news.un.org/en/story/2023/10/1142687",
+    },
+    {
+      text: "Casualty figures were reported by Israeli authorities, Gaza health officials and international monitors, often with different methods and lag times.",
+      sourceLabel: "OCHA",
+      url: "https://www.ochaopt.org/",
+    },
   ],
   timeline: [
     { date: "7 Oct 2023", label: "Hamas-led attack on southern Israel" },

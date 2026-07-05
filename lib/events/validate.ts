@@ -19,6 +19,15 @@ export function validateEvent(e: Event): string[] {
         problems.push(`source ${s.outlet}: "${w}" not in headline`);
       }
     }
+    if (!s.url) problems.push(`source ${s.outlet}: missing url`);
+    if (!s.archiveUrl) problems.push(`source ${s.outlet}: missing archiveUrl`);
+    if (!s.publishDate) problems.push(`source ${s.outlet}: missing publishDate`);
+    if (!s.insight) problems.push(`source ${s.outlet}: missing insight`);
   }
+  for (const f of e.backgroundFacts) {
+    if (!f.text) problems.push("background fact: missing text");
+    if (!f.url) problems.push(`background fact "${f.text}": missing citation url`);
+  }
+  if (!e.methodology) problems.push("missing methodology");
   return problems;
 }

@@ -28,6 +28,17 @@ export default function SourceHeadline({ source }: { source: Source }) {
       >
         {source.tone} · {source.focus}
       </div>
+      <div className="mt-3 flex items-center justify-between gap-3 border-t border-rule pt-2 font-sans text-[11px] text-ink-muted">
+        <span>{source.publishDate}</span>
+        <a
+          href={source.archiveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent hover:underline"
+        >
+          Verify original ↗
+        </a>
+      </div>
     </div>
   );
 }

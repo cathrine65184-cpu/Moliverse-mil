@@ -19,6 +19,16 @@ export interface Source {
   framingWord: string;
   tone: string;
   focus: string;
+  url: string;
+  archiveUrl: string;
+  publishDate: string;
+  insight: string;
+}
+
+export interface BackgroundFact {
+  text: string;
+  sourceLabel: string;
+  url: string;
 }
 
 export interface ContestedTerm {
@@ -43,7 +53,8 @@ export interface Event {
   sources: Source[];
   contestedTerms: ContestedTerm[];
   historicalContext: string;
-  backgroundFacts: string[];
+  methodology: string;
+  backgroundFacts: BackgroundFact[];
   timeline: TimelineEntry[];
   missingPerspectives: string;
   reflectionQuestions: string[];

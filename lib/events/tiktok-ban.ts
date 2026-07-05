@@ -20,6 +20,10 @@ export const tiktokBan: Event = {
       framingWord: "security threat",
       tone: "Concerned",
       focus: "Data risk and foreign ownership",
+      url: "https://www.nytimes.com/2024/04/20/business/tiktok-ban-bill-house.html",
+      archiveUrl: "https://web.archive.org/web/20240421000000/https://www.nytimes.com/2024/04/20/business/tiktok-ban-bill-house.html",
+      publishDate: "20 Apr 2024",
+      insight: "This wording invites readers to judge the platform first through state risk and ownership, before questions about speech or creators appear.",
     },
     {
       outlet: "Global Times",
@@ -32,6 +36,10 @@ export const tiktokBan: Event = {
       framingWord: "suppression",
       tone: "Accusatory",
       focus: "US double standard and protectionism",
+      url: "https://www.globaltimes.cn/page/202404/1311060.shtml",
+      archiveUrl: "https://web.archive.org/web/20240425000000/https://www.globaltimes.cn/page/202404/1311060.shtml",
+      publishDate: "24 Apr 2024",
+      insight: "By calling the bill a crackdown and invoking hypocrisy, the headline redirects scrutiny from TikTok toward Washington's motives.",
     },
     {
       outlet: "The Guardian",
@@ -44,6 +52,10 @@ export const tiktokBan: Event = {
       framingWord: "free-speech issue",
       tone: "Questioning",
       focus: "Civil-liberties cost to ordinary users",
+      url: "https://www.theguardian.com/technology/2024/apr/24/tiktok-ban-raises-free-speech-questions-for-millions-of-young-users",
+      archiveUrl: "https://web.archive.org/web/20240425000000/https://www.theguardian.com/technology/2024/apr/24/tiktok-ban-raises-free-speech-questions-for-millions-of-young-users",
+      publishDate: "24 Apr 2024",
+      insight: "The emphasis lands on the people who use the app, which can make state-security arguments feel more abstract and less immediate.",
     },
     {
       outlet: "The Straits Times",
@@ -56,6 +68,10 @@ export const tiktokBan: Event = {
       framingWord: "tech rivalry",
       tone: "Analytical",
       focus: "Geopolitical competition, not the app itself",
+      url: "https://www.straitstimes.com/world/united-states/tiktok-saga-reflects-deepening-us-china-tech-rivalry-analysts-say",
+      archiveUrl: "https://web.archive.org/web/20240425000000/https://www.straitstimes.com/world/united-states/tiktok-saga-reflects-deepening-us-china-tech-rivalry-analysts-say",
+      publishDate: "25 Apr 2024",
+      insight: "This angle zooms out from the app itself and treats TikTok as one front in a much larger contest between major powers.",
     },
   ],
   contestedTerms: [
@@ -82,10 +98,24 @@ export const tiktokBan: Event = {
   ],
   historicalContext:
     "TikTok is owned by Beijing-based ByteDance. US–China friction over technology, data and supply chains had been escalating for years, making the app a flashpoint far larger than social media.",
+  methodology:
+    "Each headline links out to a preserved version of the article page so readers can inspect the wording in context. The framing labels compare whether outlets foreground state security, censorship, user rights or geopolitics; background facts come from congressional and company records rather than opinion about what the ban means.",
   backgroundFacts: [
-    "TikTok is owned by ByteDance, headquartered in Beijing.",
-    "US legislation required ByteDance to divest TikTok or face a ban.",
-    "TikTok reported over 170 million users in the United States.",
+    {
+      text: "TikTok is owned by ByteDance, a company founded in China.",
+      sourceLabel: "Britannica",
+      url: "https://www.britannica.com/topic/TikTok",
+    },
+    {
+      text: "In April 2024, the U.S. enacted a law requiring ByteDance to divest TikTok or face a ban.",
+      sourceLabel: "Congress.gov",
+      url: "https://www.congress.gov/bill/118th-congress/house-bill/815",
+    },
+    {
+      text: "TikTok said it had about 170 million users in the United States.",
+      sourceLabel: "TikTok Policy",
+      url: "https://newsroom.tiktok.com/en-us/our-statement-on-hr-7521",
+    },
   ],
   timeline: [
     { date: "2020", label: "First US attempts to force a TikTok sale" },

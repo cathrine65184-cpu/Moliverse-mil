@@ -1,11 +1,11 @@
 import FactTimeline from "@/components/FactTimeline";
-import { TimelineEntry } from "@/lib/types";
+import { BackgroundFact, TimelineEntry } from "@/lib/types";
 
 export default function BackgroundFacts({
   facts,
   timeline,
 }: {
-  facts: string[];
+  facts: BackgroundFact[];
   timeline: TimelineEntry[];
 }) {
   return (
@@ -16,7 +16,17 @@ export default function BackgroundFacts({
             <span className="text-verified" aria-hidden>
               ✓
             </span>
-            <span>{f}</span>
+            <span>
+              {f.text}{" "}
+              <a
+                href={f.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-sans text-[11px] text-accent hover:underline"
+              >
+                ({f.sourceLabel} ↗)
+              </a>
+            </span>
           </li>
         ))}
       </ul>

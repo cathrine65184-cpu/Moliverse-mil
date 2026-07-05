@@ -4,8 +4,9 @@ import { notFound } from "next/navigation";
 import BackgroundFacts from "@/components/BackgroundFacts";
 import ContestedWordStrip from "@/components/ContestedWordStrip";
 import FramingExplainer from "@/components/FramingExplainer";
+import PerspectiveChallenge from "@/components/PerspectiveChallenge";
 import ReflectionPrompts from "@/components/ReflectionPrompts";
-import SourceHeadline from "@/components/SourceHeadline";
+import SourcesAndMethod from "@/components/SourcesAndMethod";
 import { events, getEvent } from "@/lib/events";
 
 export function generateStaticParams() {
@@ -58,11 +59,9 @@ export default function EventPage({ params }: { params: { slug: string } }) {
         {event.standfirst}
       </p>
 
-      <SectionLabel n="①">The same event, {event.sources.length} headlines</SectionLabel>
-      <div className="mt-3 grid gap-3 sm:grid-cols-2">
-        {event.sources.map((s) => (
-          <SourceHeadline key={s.outlet} source={s} />
-        ))}
+      <SectionLabel n="①">Guess before you read — {event.sources.length} headlines</SectionLabel>
+      <div className="mt-3">
+        <PerspectiveChallenge sources={event.sources} />
       </div>
 
       <div className="mt-4">
@@ -95,6 +94,11 @@ export default function EventPage({ params }: { params: { slug: string } }) {
           slug={event.slug}
           questions={event.reflectionQuestions}
         />
+      </div>
+
+      <SectionLabel n="⑥">Sources &amp; method</SectionLabel>
+      <div className="mt-3">
+        <SourcesAndMethod sources={event.sources} methodology={event.methodology} />
       </div>
 
       <div className="mt-12 border-t border-rule pt-5">
